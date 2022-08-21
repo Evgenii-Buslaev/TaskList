@@ -1,0 +1,30 @@
+.task {
+    margin: 0.5rem auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(66, 57, 47);
+    color: #c7c7c7;
+}
+
+.task-text {
+    width: 40vw;
+}
+
+.buttons {
+    width: auto;
+    text-align: center;
+}
+
+.task button {
+    color: #797171;
+}
+
+.task button:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}

@@ -4,6 +4,9 @@
 
 /* components */
 @import url('../css/components/input.css');
+@import url('../css/components/tasks.css');
+@import url('../css/components/task.css');
 
 /* media */
 @import url('../css/media/components/input-media.css');
+@import url('../css/media/components/task-media.css');

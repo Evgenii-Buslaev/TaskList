@@ -9,9 +9,17 @@ export default class Task {
     // task node
     this.node = document.createElement("div");
     this.node.classList.add("task");
-    this.node.innerText = this.value;
+
+    // text element
+    this.text = document.createElement("div");
+    this.text.classList.add("task-text");
+    this.text.innerText = this.value;
 
     // buttons
+
+    this.buttons = document.createElement("div");
+    this.buttons.classList.add("buttons");
+
     this.edit_btn = document.createElement("button");
     this.edit_btn.classList.add("edit-btn");
     this.edit_btn.textContent = "Изменить";
@@ -19,8 +27,11 @@ export default class Task {
     this.delete_btn.classList.add("delete_btn");
     this.delete_btn.textContent = "Удалить";
 
-    this.node.appendChild(this.edit_btn);
-    this.node.appendChild(this.delete_btn);
+    this.buttons.appendChild(this.edit_btn);
+    this.buttons.appendChild(this.delete_btn);
+
+    this.node.appendChild(this.text);
+    this.node.appendChild(this.buttons);
   }
 
   renderTask() {
