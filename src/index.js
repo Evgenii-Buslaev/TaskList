@@ -1,21 +1,9 @@
-import Task from "./scripts/Classes/Task.js";
+import { getApiData } from "./scripts/handlers/getApi.js";
+import { renderServerChanges } from "./scripts/handlers/renderServerChanges.js";
 
-import { body } from "./scripts/constants.js";
+import { state } from "./scripts/state.js";
 
-async function getApiData() {
-  let getTasksPromise = fetch(
-    "https://animesonproject.herokuapp.com/api/v1/task/"
-  );
-
-  let tasksResponse = await getTasksPromise;
-  let tasks = await tasksResponse.json();
-  console.log(tasks);
-
-  tasks.forEach((element) => {
-    let task = new Task(element.task, body);
-    task.generateTask();
-    task.renderTask();
-  });
-}
-
-getApiData();
+window.addEventListener("load", () => {
+  getApiData();
+  renderServerChanges(state);
+});
