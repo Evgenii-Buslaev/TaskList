@@ -1,5 +1,5 @@
 // variables for working with DOM
 
-let body = document.querySelector("body");
+let taskContainer = document.querySelector("#tasks-container");
 
-export { body };
+export { taskContainer };

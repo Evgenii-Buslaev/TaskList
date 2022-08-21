@@ -1,0 +1,28 @@
+.input-container{
+    margin: 2rem auto 0 ;
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(44, 43, 46);
+    border-radius: 30px;
+}
+
+.input-container input {
+    width: 50vw;
+    height: inherit;
+    font-size: 1rem;
+    color: rgb(173, 162, 162)
+}
+
+.input-container button {
+    font-size: 1rem;
+    color: rgb(173, 162, 162)
+}
+
+.input-container button:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}

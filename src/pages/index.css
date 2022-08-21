@@ -1,1 +1,9 @@
 @import url("../css/reset.css");
+@import url('../css/fonts.css');
+@import url('../css/main.css');
+
+/* components */
+@import url('../css/components/input.css');
+
+/* media */
+@import url('../css/media/components/input-media.css');
