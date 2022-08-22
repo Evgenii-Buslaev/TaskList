@@ -4,11 +4,14 @@ import { clearInput } from "./scripts/handlers/input.js";
 import { clearBtn } from "./scripts/constants.js";
 
 import { state } from "./scripts/state.js";
+import { task, addApiTask } from "./scripts/handlers/add.js";
 
 window.addEventListener("load", () => {
   getApiData();
   renderServerChanges(state);
 });
+
+addApiTask(task);
 
 // handlers for input
 clearBtn.addEventListener("click", clearInput);

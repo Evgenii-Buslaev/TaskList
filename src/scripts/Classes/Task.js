@@ -1,8 +1,9 @@
 export default class Task {
-  constructor(value, parent) {
+  constructor(value, parent /* addHandler */) {
     this.id = Math.random();
     this.value = value;
     this.parent = parent;
+    /* this.add = addHandler; */
   }
 
   generateTask() {
@@ -37,4 +38,8 @@ export default class Task {
   renderTask() {
     this.parent.appendChild(this.node);
   }
+
+  /* addTask() {
+    this.add_handler();
+  } */
 }
