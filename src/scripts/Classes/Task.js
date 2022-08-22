@@ -16,6 +16,7 @@ export default class Task {
 
     // text element
     this.text = document.createElement("div");
+    this.text = document.createElement("hover");
     this.text.classList.add("task-text");
     this.text.innerText = this.value;
 
@@ -23,12 +24,14 @@ export default class Task {
     this.buttons = document.createElement("div");
     this.buttons.classList.add("buttons");
 
+
+
     this.edit_btn = document.createElement("button");
     this.edit_btn.classList.add("edit-btn");
-    this.edit_btn.textContent = "Изменить";
+    this.edit_btn.textContent = "Edit";
     this.delete_btn = document.createElement("button");
     this.delete_btn.classList.add("delete_btn");
-    this.delete_btn.textContent = "Удалить";
+    this.delete_btn.textContent = "Delete";
 
     this.buttons.appendChild(this.edit_btn);
     this.buttons.appendChild(this.delete_btn);

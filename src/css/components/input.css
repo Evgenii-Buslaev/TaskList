@@ -1,28 +1,17 @@
 .input-container{
     margin: 2rem auto 0 ;
-    width: 80vw;
+    width: 70vw;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: rgb(44, 43, 46);
+    border: 2px solid rgb(4,170,109);
     border-radius: 30px;
 }
 
 .input-container input {
-    width: 50vw;
+    width: 60vw;
     height: inherit;
     font-size: 1rem;
-    color: rgb(173, 162, 162)
-}
-
-.input-container button {
-    font-size: 1rem;
-    color: rgb(173, 162, 162)
-}
-
-.input-container button:hover {
-    opacity: 0.3;
-    cursor: pointer;
+    color: rgb(223, 223, 223);
 }
