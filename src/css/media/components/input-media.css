@@ -2,6 +2,7 @@
     .input-container input {
         width: 40vw;
     }
+
     .input-container button {
         font-size: 0.8rem;
     }
@@ -13,11 +14,13 @@
         height: 20vh;
         padding: 0.3rem;
     }
+
     .input-container input {
         width: 70vw;
     }
+
     .input-container button {
         margin: 0.5rem auto 0
     }
-    
+
 }
