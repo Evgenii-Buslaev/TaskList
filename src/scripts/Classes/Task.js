@@ -16,7 +16,6 @@ export default class Task {
     this.text.innerText = this.value;
 
     // buttons
-
     this.buttons = document.createElement("div");
     this.buttons.classList.add("buttons");
 
