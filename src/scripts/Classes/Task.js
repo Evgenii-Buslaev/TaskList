@@ -1,8 +1,12 @@
 export default class Task {
-  constructor(value, parent) {
-    this.id = Math.random();
+  constructor(id, value, parent, { addHandler, deleteHandler }) {
+    this.id = id;
     this.value = value;
     this.parent = parent;
+
+    // handlers
+    this.add_handler = addHandler;
+    this.delete_handler = deleteHandler;
   }
 
   generateTask() {
@@ -38,5 +42,14 @@ export default class Task {
 
   renderTask() {
     this.parent.appendChild(this.node);
+  }
+
+  setHandlers() {
+    this.edit_btn.addEventListener("click", () => {
+      console.log("edit");
+    });
+    this.delete_btn.addEventListener("click", () => {
+      console.log("delete");
+    });
   }
 }

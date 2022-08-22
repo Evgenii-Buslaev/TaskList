@@ -1,5 +1,10 @@
 // variables for working with DOM
+// input part
+const inputTask = document.getElementById("task-input");
+const clearBtn = document.getElementById("clear-input-btn");
+const addBtn = document.getElementById("add-btn");
 
-let taskContainer = document.querySelector("#tasks-container");
+// tasks part
+const taskContainer = document.querySelector("#tasks-container");
 
-export { taskContainer };
+export { inputTask, clearBtn, addBtn, taskContainer };

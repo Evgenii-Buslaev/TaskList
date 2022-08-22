@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     width: 70vw;
-    height: 2rem;
+    height: auto;
     border-radius: 1rem;
     background-color: rgb(4,170,109);
     color: white;
