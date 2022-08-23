@@ -1,5 +1,7 @@
 // function for adding server data
 
+import { renderAddedTask } from "./renderAddedTasks.js";
+
 export async function addApiTask() {
   let task = { task: `${document.getElementById("task-input").value}` };
 
@@ -11,12 +13,10 @@ export async function addApiTask() {
     body: JSON.stringify(task),
   };
 
-  let postTasksPromise = fetch(
-    "https://animesonproject.herokuapp.com/api/v1/task/",
-    data
-  );
-
-  let tasksResponse = await postTasksPromise;
-  let tasks = await tasksResponse.json();
-  console.log(tasks);
+  fetch("https://animesonproject.herokuapp.com/api/v1/task/", data)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      renderAddedTask(result.id);
+    });
 }

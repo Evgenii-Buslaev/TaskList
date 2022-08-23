@@ -15,7 +15,6 @@ window.addEventListener("load", () => {
 
 addBtn.addEventListener("click", () => {
   addApiTask();
-  renderAddedTask();
 });
 
 /* deleteApiTask(1); */

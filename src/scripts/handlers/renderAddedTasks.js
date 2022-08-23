@@ -4,9 +4,9 @@ import { taskContainer } from "../constants.js";
 import { addApiTask } from "../handlers/add.js";
 import { deleteApiTask } from "../handlers/delete.js";
 
-export function renderAddedTask() {
+export function renderAddedTask(id) {
   let task = new Task(
-    null,
+    id,
     document.getElementById("task-input").value,
     taskContainer,
     addApiTask,
