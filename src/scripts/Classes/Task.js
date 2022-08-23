@@ -1,5 +1,12 @@
 export default class Task {
-  constructor(id, value, parent, { addHandler, deleteHandler }) {
+  constructor(
+    id,
+    value,
+    parent,
+    addHandler,
+    deleteHandler,
+    renderChangesHandler
+  ) {
     this.id = id;
     this.value = value;
     this.parent = parent;
@@ -7,6 +14,7 @@ export default class Task {
     // handlers
     this.add_handler = addHandler;
     this.delete_handler = deleteHandler;
+    this.render_changes = renderChangesHandler;
   }
 
   generateTask() {
@@ -23,8 +31,6 @@ export default class Task {
     // buttons
     this.buttons = document.createElement("div");
     this.buttons.classList.add("buttons");
-
-
 
     this.edit_btn = document.createElement("button");
     this.edit_btn.classList.add("edit-btn");
@@ -49,7 +55,7 @@ export default class Task {
       console.log("edit");
     });
     this.delete_btn.addEventListener("click", () => {
-      console.log("delete");
+      this.delete_handler(this.id);
     });
   }
 }
