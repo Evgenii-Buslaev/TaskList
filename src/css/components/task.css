@@ -6,13 +6,13 @@
     align-items: center;
     width: 70vw;
     height: auto;
-    border-radius: 1rem;
+    border-radius: 20px;
     background-color: rgb(4,170,109);
     color: white;
 }
 
 .task-text {
-    width: 40vw;
+    width: 60vw;
     overflow-wrap: break-word;
 }
 
@@ -23,6 +23,7 @@
 
 .task button {
     color: white;
+
 }
 
 .task button:hover {

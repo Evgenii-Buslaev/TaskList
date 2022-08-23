@@ -6,11 +6,11 @@
     justify-content: center;
     align-items: center;
     border: 2px solid rgb(4,170,109);
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 .input-container input {
-    width: 50vw;
+    width: 55vw;
     height: inherit;
     font-size: 1rem;
     color: rgb(223, 223, 223);

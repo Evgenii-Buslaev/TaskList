@@ -1,8 +1,8 @@
 @media (max-width: 750px) {
     .task {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
     .task button {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 }

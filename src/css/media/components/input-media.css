@@ -1,4 +1,5 @@
 @media (max-width: 1350px) {
+
     .input-buttons {
         width: 15vw;
         text-align: center;
@@ -13,7 +14,7 @@
         font-size: 0.8rem;
     }
     .input-buttons {
-        width: 20vw;
+        width: 25vw;
         text-align: center;
     }
 }
@@ -21,7 +22,7 @@
 @media (max-width: 600px) {
     .input-container {
         flex-direction: column;
-        height: 20vh;
+        height: 15vh;
         padding: 0.3rem;
     }
     .input-container input {
