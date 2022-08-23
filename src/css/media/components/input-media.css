@@ -1,8 +1,14 @@
+@media (max-width: 1350px) {
+    .input-buttons {
+        width: 15vw;
+        text-align: center;
+    }
+}
+
 @media (max-width: 1000px) {
     .input-container input {
         width: 40vw;
     }
-
     .input-container button {
         font-size: 0.8rem;
     }
@@ -14,13 +20,16 @@
         height: 20vh;
         padding: 0.3rem;
     }
-
     .input-container input {
-        width: 70vw;
+        width: 65vw;
+        text-align: center;
     }
-
     .input-container button {
         margin: 0.5rem auto 0
     }
-
+    .input-buttons {
+        width: 50vw;
+        text-align: center;
+        margin: 0 auto 0.5rem;
+    }
 }
