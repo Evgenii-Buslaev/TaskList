@@ -15,5 +15,11 @@ addBtn.addEventListener("click", () => {
   addApiTask();
 });
 
+inputTask.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) {
+    addApiTask();
+  }
+});
+
 // handlers for input
 clearBtn.addEventListener("click", clearInput);
