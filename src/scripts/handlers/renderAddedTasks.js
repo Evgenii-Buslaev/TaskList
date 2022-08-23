@@ -1,5 +1,5 @@
 import Task from "../Classes/Task.js";
-import { taskContainer } from "../constants.js";
+import { inputTask, taskContainer } from "../constants.js";
 
 import { addApiTask } from "../handlers/add.js";
 import { deleteApiTask } from "../handlers/delete.js";
@@ -15,4 +15,5 @@ export function renderAddedTask(id) {
   task.generateTask();
   task.renderTask();
   task.setHandlers();
+  inputTask.value = "";
 }

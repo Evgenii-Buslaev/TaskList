@@ -1,6 +1,6 @@
 // function for adding server data
 
-import { renderAddedTask } from "./renderAddedTasks.js";
+import { renderAddedTask } from "../handlers/renderAddedTasks.js";
 
 export async function addApiTask() {
   let task = { task: `${document.getElementById("task-input").value}` };
@@ -18,5 +18,6 @@ export async function addApiTask() {
     .then((result) => {
       console.log(result);
       renderAddedTask(result.id);
-    });
+    })
+    .catch((error) => console.log(error));
 }

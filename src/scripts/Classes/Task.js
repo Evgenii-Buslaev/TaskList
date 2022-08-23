@@ -21,10 +21,10 @@ export default class Task {
     // task node
     this.node = document.createElement("div");
     this.node.classList.add("task");
+    this.node.setAttribute("id", this.id);
 
     // text element
     this.text = document.createElement("div");
-    this.text = document.createElement("hover");
     this.text.classList.add("task-text");
     this.text.innerText = this.value;
 

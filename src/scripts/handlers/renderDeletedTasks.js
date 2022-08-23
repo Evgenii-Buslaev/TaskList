@@ -1,5 +1,6 @@
 import { taskContainer } from "../constants.js";
 
 export function renderDeletedTask(id) {
-  console.log(taskContainer);
+  let targetTask = document.getElementById(id);
+  taskContainer.removeChild(targetTask);
 }
