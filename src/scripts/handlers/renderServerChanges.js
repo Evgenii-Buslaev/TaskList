@@ -6,6 +6,7 @@ import { editTask } from "./edit.js";
 import { deleteApiTask } from "../handlers/delete.js";
 import { renderDeletedTask } from "./renderDeletedTasks.js";
 import { readTask } from "./read.js";
+import { renderChosenTask } from "./renderChosenTask.js";
 
 // function for rendering server data after loading the page
 
@@ -22,6 +23,7 @@ async function renderServerChanges(object) {
           deleteApiTask,
           renderDeletedTask,
           readTask,
+          renderChosenTask,
           throwNotification
         );
         task.generateTask();

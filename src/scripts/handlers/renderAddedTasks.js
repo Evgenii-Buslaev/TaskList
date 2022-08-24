@@ -6,6 +6,7 @@ import { editTask } from "./edit.js";
 import { deleteApiTask } from "../handlers/delete.js";
 import { throwNotification } from "./invalid_input.js";
 import { readTask } from "./read.js";
+import { renderChosenTask } from "./renderChosenTask.js";
 
 export function renderAddedTask(id) {
   let task = new Task(
@@ -16,6 +17,7 @@ export function renderAddedTask(id) {
     editTask,
     deleteApiTask,
     readTask,
+    renderChosenTask,
     throwNotification
   );
   task.generateTask();
