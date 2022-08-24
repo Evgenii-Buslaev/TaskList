@@ -1,4 +1,4 @@
-import { getApiData } from "./scripts/handlers/getApi.js";
+import { getApiData } from "./scripts/handlers/get.js";
 import { renderServerChanges } from "./scripts/handlers/renderServerChanges.js";
 import { clearInput } from "./scripts/handlers/input.js";
 import { inputTask, clearBtn, addBtn } from "./scripts/constants.js";
