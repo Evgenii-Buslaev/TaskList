@@ -4,6 +4,7 @@ import { inputTask, taskContainer } from "../constants.js";
 import { addApiTask } from "../handlers/add.js";
 import { editTask } from "./edit.js";
 import { deleteApiTask } from "../handlers/delete.js";
+import { throwNotification } from "./invalid_input.js";
 
 export function renderAddedTask(id) {
   let task = new Task(
@@ -12,7 +13,8 @@ export function renderAddedTask(id) {
     taskContainer,
     addApiTask,
     editTask,
-    deleteApiTask
+    deleteApiTask,
+    throwNotification
   );
   task.generateTask();
   task.renderTask();

@@ -6,7 +6,8 @@ export default class Task {
     addHandler,
     editHandler,
     deleteHandler,
-    renderChangesHandler
+    renderChangesHandler,
+    notificationHandler
   ) {
     this.id = id;
     this.value = value;
@@ -17,6 +18,9 @@ export default class Task {
     this.edit_handler = editHandler;
     this.delete_handler = deleteHandler;
     this.render_changes = renderChangesHandler;
+
+    // validation
+    this.validation = notificationHandler;
   }
 
   generateTask() {
@@ -69,11 +73,19 @@ export default class Task {
         this.edit_btn.textContent = "Save";
         this.node.style.backgroundColor = "rgb(13, 59, 41)";
       } else {
-        this.edit_btn.classList.remove("save-btn");
-        this.saveTask();
-        this.edit_btn.textContent = "Edit";
-        this.node.style.backgroundColor = "rgb(62, 120, 97)";
-        this.edit_handler(this.id);
+        if (
+          this.text.textContent !== "" &&
+          this.text.textContent !== null &&
+          this.text.textContent !== undefined
+        ) {
+          this.edit_btn.classList.remove("save-btn");
+          this.saveTask();
+          this.edit_btn.textContent = "Edit";
+          this.node.style.backgroundColor = "rgb(62, 120, 97)";
+          this.edit_handler(this.id);
+        } else {
+          this.validation();
+        }
       }
     });
     this.delete_btn.addEventListener("click", (e) => {
