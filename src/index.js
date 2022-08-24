@@ -5,6 +5,7 @@ import { inputTask, clearBtn, addBtn } from "./scripts/constants.js";
 
 import { state } from "./scripts/state.js";
 import { addApiTask } from "./scripts/handlers/add.js";
+import { readTask } from "./scripts/handlers/read.js";
 
 window.addEventListener("load", () => {
   getApiData();
@@ -20,6 +21,8 @@ inputTask.addEventListener("keydown", (e) => {
     addApiTask();
   }
 });
+
+readTask(3);
 
 // handlers for input
 clearBtn.addEventListener("click", clearInput);

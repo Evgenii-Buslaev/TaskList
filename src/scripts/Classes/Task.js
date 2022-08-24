@@ -7,6 +7,7 @@ export default class Task {
     editHandler,
     deleteHandler,
     renderChangesHandler,
+    readHandler,
     notificationHandler
   ) {
     this.id = id;
@@ -17,6 +18,7 @@ export default class Task {
     this.add_handler = addHandler;
     this.edit_handler = editHandler;
     this.delete_handler = deleteHandler;
+    this.read_handler = readHandler;
     this.render_changes = renderChangesHandler;
 
     // validation
@@ -62,6 +64,11 @@ export default class Task {
 
   renderTask() {
     this.parent.appendChild(this.node);
+    this.node.addEventListener("click", (e) => {
+      if (e.target.parentNode.classList.value !== "buttons") {
+        this.read_handler(this.id);
+      }
+    });
   }
 
   setHandlers() {

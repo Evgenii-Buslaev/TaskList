@@ -5,6 +5,7 @@ import { throwNotification } from "./invalid_input.js";
 import { editTask } from "./edit.js";
 import { deleteApiTask } from "../handlers/delete.js";
 import { renderDeletedTask } from "./renderDeletedTasks.js";
+import { readTask } from "./read.js";
 
 // function for rendering server data after loading the page
 
@@ -20,6 +21,7 @@ async function renderServerChanges(object) {
           editTask,
           deleteApiTask,
           renderDeletedTask,
+          readTask,
           throwNotification
         );
         task.generateTask();
