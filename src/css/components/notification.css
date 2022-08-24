@@ -1,0 +1,29 @@
+.notification {
+    position: absolute;
+    top: 0.5rem;
+    left: 25%;
+    display: block;
+    margin: 2rem 50% 0 0;
+    padding: 1rem;
+    width: 50vw;
+    text-align: center;
+
+    background-color: rgb(75, 148, 123);
+    border-radius: 20px;
+    color: black;
+    font-size: 1rem;
+    opacity: 0;
+
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.clear-notif-button {
+    font-size: 0.8rem;
+    color: green;
+}
+
+.clear-notif-button:hover {
+    color: white;
+    cursor: pointer
+}
