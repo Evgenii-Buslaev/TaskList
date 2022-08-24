@@ -4,6 +4,7 @@ export default class Task {
     value,
     parent,
     addHandler,
+    editHandler,
     deleteHandler,
     renderChangesHandler
   ) {
@@ -13,6 +14,7 @@ export default class Task {
 
     // handlers
     this.add_handler = addHandler;
+    this.edit_handler = editHandler;
     this.delete_handler = deleteHandler;
     this.render_changes = renderChangesHandler;
   }
@@ -46,15 +48,35 @@ export default class Task {
     this.node.appendChild(this.buttons);
   }
 
+  editTask() {
+    this.text.setAttribute("contenteditable", "true");
+  }
+
+  saveTask() {
+    this.text.setAttribute("contenteditable", "false");
+  }
+
   renderTask() {
     this.parent.appendChild(this.node);
   }
 
   setHandlers() {
-    this.edit_btn.addEventListener("click", () => {
-      console.log("edit");
+    this.edit_btn.addEventListener("click", (e) => {
+      if (!e.target.classList.value.includes("save-btn")) {
+        this.edit_btn.classList.add("save-btn");
+        this.editTask();
+        this.text.focus();
+        this.edit_btn.textContent = "Save";
+        this.node.style.backgroundColor = "rgb(13, 59, 41)";
+      } else {
+        this.edit_btn.classList.remove("save-btn");
+        this.saveTask();
+        this.edit_btn.textContent = "Edit";
+        this.node.style.backgroundColor = "rgb(62, 120, 97)";
+        this.edit_handler(this.id);
+      }
     });
-    this.delete_btn.addEventListener("click", () => {
+    this.delete_btn.addEventListener("click", (e) => {
       this.delete_handler(this.id);
     });
   }

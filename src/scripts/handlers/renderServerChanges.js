@@ -1,7 +1,7 @@
 import Task from "../Classes/Task.js";
 import { taskContainer } from "../constants.js";
-import { getApiData } from "../handlers/getApi.js";
 import { addApiTask } from "../handlers/add.js";
+import { editTask } from "./edit.js";
 import { deleteApiTask } from "../handlers/delete.js";
 import { renderDeletedTask } from "./renderDeletedTasks.js";
 
@@ -16,6 +16,7 @@ async function renderServerChanges(object) {
           element.task,
           taskContainer,
           addApiTask,
+          editTask,
           deleteApiTask,
           renderDeletedTask
         );
