@@ -84,17 +84,18 @@ export default class Task {
         this.node.style.backgroundColor = "rgb(13, 59, 41)";
       } else {
         if (
-          this.text.textContent !== "" &&
-          this.text.textContent !== null &&
-          this.text.textContent !== undefined
+          this.text.textContent == "" ||
+          this.text.textContent == null ||
+          this.text.textContent == undefined
         ) {
+          this.validation();
+          this.text.focus();
+        } else {
           this.edit_btn.classList.remove("save-btn");
           this.saveTask();
           this.edit_btn.textContent = "Edit";
           this.node.style.backgroundColor = "rgb(62, 120, 97)";
           this.edit_handler(this.id);
-        } else {
-          this.validation();
         }
       }
     });
