@@ -13,6 +13,7 @@ import { renderChosenTask } from "./renderChosenTask.js";
 async function renderServerChanges(object) {
   let checking = setInterval(() => {
     if (object.data_recieved) {
+      taskContainer.innerHTML = "";
       object.data_array.forEach((element) => {
         let task = new Task(
           element.id,

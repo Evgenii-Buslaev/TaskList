@@ -36,3 +36,12 @@
     background-color: rgb(62, 120, 97);
     color: white;
 }
+
+.back_btn {
+    color: white;
+}
+
+.back_btn:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}

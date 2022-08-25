@@ -1,4 +1,7 @@
 import { taskContainer } from "../constants.js";
+import { state } from "../state.js";
+import { getApiData } from "./get.js";
+import { renderServerChanges } from "./renderServerChanges.js";
 
 export function renderChosenTask(id) {
   let task = null;
@@ -13,7 +16,11 @@ export function renderChosenTask(id) {
   let backBtn = document.createElement("div");
   backBtn.innerText = "Back";
   backBtn.classList.add("back_btn");
-  taskContainer.appendChild(backBtn);
+  backBtn.addEventListener("click", () => {
+    getApiData();
+    renderServerChanges(state);
+  });
 
+  taskContainer.appendChild(backBtn);
   taskContainer.appendChild(task);
 }
