@@ -14,6 +14,7 @@ export default class Task {
     this.id = id;
     this.value = value;
     this.parent = parent;
+    this.currently_editing == false;
 
     // handlers
     this.add_handler = addHandler;
@@ -58,16 +59,21 @@ export default class Task {
 
   editTask() {
     this.text.setAttribute("contenteditable", "true");
+    this.currently_editing = true;
   }
 
   saveTask() {
     this.text.setAttribute("contenteditable", "false");
+    this.currently_editing = false;
   }
 
   renderTask() {
     this.parent.appendChild(this.node);
     this.node.addEventListener("click", (e) => {
-      if (e.target.parentNode.classList.value !== "buttons") {
+      if (
+        e.target.parentNode.classList.value !== "buttons" &&
+        this.currently_editing !== true
+      ) {
         this.read_handler(this.id);
         this.render_chosen_one(this.id);
       }
