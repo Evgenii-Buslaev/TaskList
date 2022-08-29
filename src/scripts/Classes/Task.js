@@ -1,3 +1,5 @@
+import { throwNotification } from "../handlers/invalid_input.js";
+
 export default class Task {
   constructor(
     id,
@@ -14,7 +16,7 @@ export default class Task {
     this.id = id;
     this.value = value;
     this.parent = parent;
-    this.currently_editing == false;
+    this.currently_editing = false;
 
     // handlers
     this.add_handler = addHandler;
@@ -69,18 +71,17 @@ export default class Task {
 
   renderTask() {
     this.parent.appendChild(this.node);
+  }
+
+  setHandlers() {
     this.node.addEventListener("click", (e) => {
       if (
         e.target.parentNode.classList.value !== "buttons" &&
         this.currently_editing !== true
       ) {
         this.read_handler(this.id);
-        this.render_chosen_one(this.id);
       }
     });
-  }
-
-  setHandlers() {
     this.edit_btn.addEventListener("click", (e) => {
       if (!e.target.classList.value.includes("save-btn")) {
         this.edit_btn.classList.add("save-btn");
@@ -90,11 +91,11 @@ export default class Task {
         this.node.style.backgroundColor = "rgb(13, 59, 41)";
       } else {
         if (
-          this.text.textContent == "" ||
-          this.text.textContent == null ||
-          this.text.textContent == undefined
+          this.text.textContent === "" ||
+          this.text.textContent === null ||
+          this.text.textContent === undefined
         ) {
-          this.validation();
+          throwNotification();
           this.text.focus();
         } else {
           this.edit_btn.classList.remove("save-btn");
