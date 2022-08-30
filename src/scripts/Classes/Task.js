@@ -15,7 +15,7 @@ export default class Task {
   ) {
     this.id = id;
     this.value = value;
-    this.name = `${this.value.split(" ")[0]}...`;
+    this.name = this.value.split(" ")[0];
     this.parent = parent;
     this.currently_editing = false;
 
@@ -55,6 +55,8 @@ export default class Task {
 
     this.buttons.appendChild(this.edit_btn);
     this.buttons.appendChild(this.delete_btn);
+
+    this.buttons.style.display = "none";
 
     this.node.appendChild(this.text);
     this.node.appendChild(this.buttons);

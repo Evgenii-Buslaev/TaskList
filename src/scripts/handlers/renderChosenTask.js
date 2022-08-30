@@ -8,9 +8,9 @@ export function renderChosenTask(id, text) {
   let taskArray = taskContainer.children;
   for (let i = 0; i < taskArray.length; i++) {
     if (taskArray[i].id == id) {
-      console.log(text);
       taskArray[i].querySelector(".task-text").innerText = text;
       task = taskArray[i];
+      task.querySelector(".buttons").style.display = "block";
     }
   }
   taskContainer.innerHTML = "";
