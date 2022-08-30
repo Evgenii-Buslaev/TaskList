@@ -15,6 +15,7 @@ export default class Task {
   ) {
     this.id = id;
     this.value = value;
+    this.name = `${this.value.split(" ")[0]}...`;
     this.parent = parent;
     this.currently_editing = false;
 
@@ -39,7 +40,7 @@ export default class Task {
     // text element
     this.text = document.createElement("div");
     this.text.classList.add("task-text");
-    this.text.innerText = this.value;
+    this.text.innerText = this.name;
 
     // buttons
     this.buttons = document.createElement("div");
@@ -79,7 +80,8 @@ export default class Task {
         e.target.parentNode.classList.value !== "buttons" &&
         this.currently_editing !== true
       ) {
-        this.read_handler(this.id);
+        console.log(this.value);
+        this.read_handler(this.id, this.value);
       }
     });
     this.edit_btn.addEventListener("click", (e) => {

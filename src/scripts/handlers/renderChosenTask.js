@@ -3,11 +3,13 @@ import { state } from "../state.js";
 import { getApiData } from "./get.js";
 import { renderServerChanges } from "./renderServerChanges.js";
 
-export function renderChosenTask(id) {
+export function renderChosenTask(id, text) {
   let task = null;
   let taskArray = taskContainer.children;
   for (let i = 0; i < taskArray.length; i++) {
     if (taskArray[i].id == id) {
+      console.log(text);
+      taskArray[i].querySelector(".task-text").innerText = text;
       task = taskArray[i];
     }
   }
